@@ -719,7 +719,7 @@ func (k Keeper) getCollateral(ctx sdk.Context, account sdk.AccAddress, denom str
 			acc = types.AccountCollateral{
 				Account:             account.String(),
 				Collateral:          sdk.NewCoin(denom, sdk.ZeroInt()),
-				BlackDebt:             sdk.NewCoin(blackfury.MicroUSMDenom, sdk.ZeroInt()),
+				BlackDebt:           sdk.NewCoin(blackfury.MicroUSMDenom, sdk.ZeroInt()),
 				FuryCollateralized:  sdk.NewCoin(blackfury.AttoFuryDenom, sdk.ZeroInt()),
 				LastInterest:        sdk.NewCoin(blackfury.MicroUSMDenom, sdk.ZeroInt()),
 				LastSettlementBlock: ctx.BlockHeight(),

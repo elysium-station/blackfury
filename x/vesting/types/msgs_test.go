@@ -24,17 +24,17 @@ func TestMsgAddAirdrops_ValidateBasic(t *testing.T) {
 		},
 		{
 			desc:   "invalid airdrop target address",
-			sender: "black1mnfm9c7cdgqnkk66sganp78m0ydmcr4ppeaeg5",
+			sender: "black1glht96kr2rseywuvhhay894qw7ekuc4q0lh0v0",
 			airdrops: []types.Airdrop{
 				{},
 			},
 		},
 		{
 			desc:   "valid",
-			sender: "black1mnfm9c7cdgqnkk66sganp78m0ydmcr4ppeaeg5",
+			sender: "black1glht96kr2rseywuvhhay894qw7ekuc4q0lh0v0",
 			airdrops: []types.Airdrop{
 				{
-					TargetAddr: "black1mnfm9c7cdgqnkk66sganp78m0ydmcr4ppeaeg5",
+					TargetAddr: "black1glht96kr2rseywuvhhay894qw7ekuc4q0lh0v0",
 					Amount:     sdk.NewCoin(blacktypes.AttoFuryDenom, sdk.NewInt(1)),
 				},
 			},
@@ -58,7 +58,7 @@ func TestMsgAddAirdrops_ValidateBasic(t *testing.T) {
 
 func TestMsgAddAirdrops_GetSigners(t *testing.T) {
 	app.Setup(false)
-	addr := "black1mnfm9c7cdgqnkk66sganp78m0ydmcr4ppeaeg5"
+	addr := "black1glht96kr2rseywuvhhay894qw7ekuc4q0lh0v0"
 	msg := &types.MsgAddAirdrops{
 		Sender:   addr,
 		Airdrops: []types.Airdrop{},
@@ -81,12 +81,12 @@ func TestMsgExecuteAirdrops_ValidateBasic(t *testing.T) {
 		},
 		{
 			desc:     "max count must be > 0",
-			sender:   "black1mnfm9c7cdgqnkk66sganp78m0ydmcr4ppeaeg5",
+			sender:   "black1glht96kr2rseywuvhhay894qw7ekuc4q0lh0v0",
 			maxCount: 0,
 		},
 		{
 			desc:     "valid",
-			sender:   "black1mnfm9c7cdgqnkk66sganp78m0ydmcr4ppeaeg5",
+			sender:   "black1glht96kr2rseywuvhhay894qw7ekuc4q0lh0v0",
 			maxCount: 1,
 			valid:    true,
 		},
@@ -108,7 +108,7 @@ func TestMsgExecuteAirdrops_ValidateBasic(t *testing.T) {
 
 func TestMsgExecuteAirdrops_GetSigners(t *testing.T) {
 	app.Setup(false)
-	addr := "black1mnfm9c7cdgqnkk66sganp78m0ydmcr4ppeaeg5"
+	addr := "black1glht96kr2rseywuvhhay894qw7ekuc4q0lh0v0"
 	msg := &types.MsgExecuteAirdrops{
 		Sender: addr,
 	}
@@ -131,20 +131,20 @@ func TestMsgSetAllocationAddress_ValidateBasic(t *testing.T) {
 		},
 		{
 			desc:            "invalid team vesting address",
-			sender:          "black1mnfm9c7cdgqnkk66sganp78m0ydmcr4ppeaeg5",
+			sender:          "black1glht96kr2rseywuvhhay894qw7ekuc4q0lh0v0",
 			teamVestingAddr: "xxx",
 		},
 		{
 			desc:                          "invalid strategic reserve custodian address",
-			sender:                        "black1mnfm9c7cdgqnkk66sganp78m0ydmcr4ppeaeg5",
+			sender:                        "black1glht96kr2rseywuvhhay894qw7ekuc4q0lh0v0",
 			teamVestingAddr:               "black1mnfm9c7cdgqnkk66sganp78m0ydmcr4ppeaeg1",
 			strategicReserveCustodianAddr: "xxx",
 		},
 		{
 			desc:                          "valid",
-			sender:                        "black1mnfm9c7cdgqnkk66sganp78m0ydmcr4ppeaeg5",
-			teamVestingAddr:               "black1mnfm9c7cdgqnkk66sganp78m0ydmcr4ppeaeg5",
-			strategicReserveCustodianAddr: "black1mnfm9c7cdgqnkk66sganp78m0ydmcr4ppeaeg5",
+			sender:                        "black1glht96kr2rseywuvhhay894qw7ekuc4q0lh0v0",
+			teamVestingAddr:               "black1glht96kr2rseywuvhhay894qw7ekuc4q0lh0v0",
+			strategicReserveCustodianAddr: "black1glht96kr2rseywuvhhay894qw7ekuc4q0lh0v0",
 			valid:                         true,
 		},
 	} {
@@ -166,7 +166,7 @@ func TestMsgSetAllocationAddress_ValidateBasic(t *testing.T) {
 
 func TestMsgSetAllocationAddress_GetSigners(t *testing.T) {
 	app.Setup(false)
-	addr := "black1mnfm9c7cdgqnkk66sganp78m0ydmcr4ppeaeg5"
+	addr := "black1glht96kr2rseywuvhhay894qw7ekuc4q0lh0v0"
 	msg := &types.MsgSetAllocationAddress{
 		Sender: addr,
 	}

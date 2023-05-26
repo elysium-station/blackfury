@@ -47,15 +47,15 @@ func HandleRegisterBackingProposal(ctx sdk.Context, k Keeper, p *types.RegisterB
 	_, found := k.GetTotalBacking(ctx)
 	if !found {
 		k.SetTotalBacking(ctx, types.TotalBacking{
-			BlackMinted:  sdk.NewCoin(blackfury.MicroUSMDenom, sdk.ZeroInt()),
-			FuryBurned: sdk.NewCoin(blackfury.AttoFuryDenom, sdk.ZeroInt()),
+			BlackMinted: sdk.NewCoin(blackfury.MicroUSMDenom, sdk.ZeroInt()),
+			FuryBurned:  sdk.NewCoin(blackfury.AttoFuryDenom, sdk.ZeroInt()),
 		})
 	}
 
 	k.SetPoolBacking(ctx, types.PoolBacking{
-		BlackMinted:  sdk.NewCoin(blackfury.MicroUSMDenom, sdk.ZeroInt()),
-		Backing:    sdk.NewCoin(params.BackingDenom, sdk.ZeroInt()),
-		FuryBurned: sdk.NewCoin(blackfury.AttoFuryDenom, sdk.ZeroInt()),
+		BlackMinted: sdk.NewCoin(blackfury.MicroUSMDenom, sdk.ZeroInt()),
+		Backing:     sdk.NewCoin(params.BackingDenom, sdk.ZeroInt()),
+		FuryBurned:  sdk.NewCoin(blackfury.AttoFuryDenom, sdk.ZeroInt()),
 	})
 
 	ctx.EventManager().EmitEvents(sdk.Events{
@@ -123,14 +123,14 @@ func HandleRegisterCollateralProposal(ctx sdk.Context, k Keeper, p *types.Regist
 	_, found := k.GetTotalCollateral(ctx)
 	if !found {
 		k.SetTotalCollateral(ctx, types.TotalCollateral{
-			BlackDebt:            sdk.NewCoin(blackfury.MicroUSMDenom, sdk.ZeroInt()),
+			BlackDebt:          sdk.NewCoin(blackfury.MicroUSMDenom, sdk.ZeroInt()),
 			FuryCollateralized: sdk.NewCoin(blackfury.AttoFuryDenom, sdk.ZeroInt()),
 		})
 	}
 
 	k.SetPoolCollateral(ctx, types.PoolCollateral{
 		Collateral:         sdk.NewCoin(params.CollateralDenom, sdk.ZeroInt()),
-		BlackDebt:            sdk.NewCoin(blackfury.MicroUSMDenom, sdk.ZeroInt()),
+		BlackDebt:          sdk.NewCoin(blackfury.MicroUSMDenom, sdk.ZeroInt()),
 		FuryCollateralized: sdk.NewCoin(blackfury.AttoFuryDenom, sdk.ZeroInt()),
 	})
 

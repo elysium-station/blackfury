@@ -3,9 +3,9 @@ package keeper_test
 import (
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
 	testkeeper "github.com/elysium-station/blackfury/testutil/keeper"
 	"github.com/elysium-station/blackfury/x/erc20/types"
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/stretchr/testify/require"
 )
 

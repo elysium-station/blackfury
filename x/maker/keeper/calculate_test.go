@@ -104,7 +104,7 @@ func (suite *KeeperTestSuite) TestEstimateMintBySwapIn() {
 			},
 			expPass: true,
 			expRes: &types.EstimateMintBySwapInResponse{
-				BackingIn: sdk.NewCoin(suite.bcDenom, sdk.NewInt(812121)),                     // 1_000000 * (1+0.005) * 0.8 / 0.99
+				BackingIn: sdk.NewCoin(suite.bcDenom, sdk.NewInt(812121)),                       // 1_000000 * (1+0.005) * 0.8 / 0.99
 				FuryIn:    sdk.NewCoin(blackfury.AttoFuryDenom, sdk.NewInt(2010_000000_000000)), // 1_000000 * (1+0.005) * 0.2 / 10**-10
 				MintFee:   sdk.NewCoin(blackfury.MicroUSMDenom, sdk.NewInt(5000)),
 			},
@@ -442,7 +442,7 @@ func (suite *KeeperTestSuite) TestEstimateBurnBySwapIn() {
 			expPass: true,
 			expRes: &types.EstimateBurnBySwapInResponse{
 				BurnIn:     sdk.NewCoin(blackfury.MicroUSMDenom, sdk.NewInt(1257545)), // 10**16 * 10**-10 / 0.8 / (1-0.006)
-				BackingOut: sdk.NewCoin(suite.bcDenom, sdk.NewInt(252525)),          // 10**16 * 10**-10 / 0.8 * 0.2 / 0.99
+				BackingOut: sdk.NewCoin(suite.bcDenom, sdk.NewInt(252525)),            // 10**16 * 10**-10 / 0.8 * 0.2 / 0.99
 				FuryOut:    sdk.NewCoin(blackfury.AttoFuryDenom, sdk.NewInt(10000_000000_000000)),
 				BurnFee:    sdk.NewCoin(blackfury.MicroUSMDenom, sdk.NewInt(7545)), // 10**16 * 10**-10 / 0.8 / (1-0.006) * 0.006
 			},
@@ -459,7 +459,7 @@ func (suite *KeeperTestSuite) TestEstimateBurnBySwapIn() {
 			expPass: true,
 			expRes: &types.EstimateBurnBySwapInResponse{
 				BurnIn:     sdk.NewCoin(blackfury.MicroUSMDenom, sdk.NewInt(1257545)), // 10**16 * 10**-10 / 0.8 / (1-0.006)
-				BackingOut: sdk.NewCoin(suite.bcDenom, sdk.NewInt(252525)),          // 10**16 * 10**-10 / 0.8 * 0.2 / 0.99
+				BackingOut: sdk.NewCoin(suite.bcDenom, sdk.NewInt(252525)),            // 10**16 * 10**-10 / 0.8 * 0.2 / 0.99
 				FuryOut:    sdk.NewCoin(blackfury.AttoFuryDenom, sdk.NewInt(10000_000000_000000)),
 				BurnFee:    sdk.NewCoin(blackfury.MicroUSMDenom, sdk.NewInt(7545)), // 10**16 * 10**-10 / 0.8 / (1-0.006) * 0.006
 			},
@@ -569,7 +569,7 @@ func (suite *KeeperTestSuite) TestEstimateBurnBySwapOut() {
 			},
 			expPass: true,
 			expRes: &types.EstimateBurnBySwapOutResponse{
-				BackingOut: sdk.NewCoin(suite.bcDenom, sdk.ZeroInt()),                          // 1_000000 * (1-0.006) / 0.99
+				BackingOut: sdk.NewCoin(suite.bcDenom, sdk.ZeroInt()),                            // 1_000000 * (1-0.006) / 0.99
 				FuryOut:    sdk.NewCoin(blackfury.AttoFuryDenom, sdk.NewInt(9940_000000_000000)), // 1_000000 * (1-0.006) / 10**-10
 				BurnFee:    sdk.NewCoin(blackfury.MicroUSMDenom, sdk.NewInt(6000)),               // 1_000000 * 0.006
 			},
@@ -585,7 +585,7 @@ func (suite *KeeperTestSuite) TestEstimateBurnBySwapOut() {
 			},
 			expPass: true,
 			expRes: &types.EstimateBurnBySwapOutResponse{
-				BackingOut: sdk.NewCoin(suite.bcDenom, sdk.NewInt(803232)),                     // 1_000000 * (1-0.006) * 0.8 / 0.99
+				BackingOut: sdk.NewCoin(suite.bcDenom, sdk.NewInt(803232)),                       // 1_000000 * (1-0.006) * 0.8 / 0.99
 				FuryOut:    sdk.NewCoin(blackfury.AttoFuryDenom, sdk.NewInt(19880_00000_000000)), // 1_000000 * (1-0.006) * 0.2 / 10**-10
 				BurnFee:    sdk.NewCoin(blackfury.MicroUSMDenom, sdk.NewInt(6000)),               // 1_000000 * 0.006
 			},
@@ -676,7 +676,7 @@ func (suite *KeeperTestSuite) TestEstimateBuyBackingIn() {
 			expPass: true,
 			expRes: &types.EstimateBuyBackingInResponse{
 				FuryIn:     sdk.NewCoin(blackfury.AttoFuryDenom, sdk.NewInt(29909_28600_000000)), // [3*10**5 / (1-0.007)] * 0.99 / 10**-10
-				BuybackFee: sdk.NewCoin(suite.bcDenom, sdk.NewInt(2115)),                       // [3*10**5 / (1-0.007)] * 0.007
+				BuybackFee: sdk.NewCoin(suite.bcDenom, sdk.NewInt(2115)),                         // [3*10**5 / (1-0.007)] * 0.007
 			},
 		},
 	}
@@ -845,7 +845,7 @@ func (suite *KeeperTestSuite) TestEstimateSellBackingIn() {
 			},
 			expPass: true,
 			expRes: &types.EstimateSellBackingInResponse{
-				BackingIn:   sdk.NewCoin(suite.bcDenom, sdk.NewInt(1_006578)),                 // 1*10**16 / (1+0.0075-0.004) * 10**-10 / 0.99
+				BackingIn:   sdk.NewCoin(suite.bcDenom, sdk.NewInt(1_006578)),                   // 1*10**16 / (1+0.0075-0.004) * 10**-10 / 0.99
 				SellbackFee: sdk.NewCoin(blackfury.AttoFuryDenom, sdk.NewInt(39_860488_290982)), // 1*10**16 / (1+0.0075-0.004) * 0.004
 			},
 		},
@@ -960,32 +960,32 @@ func (suite *KeeperTestSuite) setupEstimationTest() {
 
 	// set pool and total backing
 	suite.app.MakerKeeper.SetPoolBacking(suite.ctx, types.PoolBacking{
-		BlackMinted:  sdk.NewCoin(blackfury.MicroUSMDenom, sdk.NewInt(8_000000)),
-		Backing:    sdk.NewCoin(suite.bcDenom, sdk.NewInt(9_000000)),
-		FuryBurned: sdk.NewCoin(blackfury.AttoFuryDenom, sdk.ZeroInt()),
+		BlackMinted: sdk.NewCoin(blackfury.MicroUSMDenom, sdk.NewInt(8_000000)),
+		Backing:     sdk.NewCoin(suite.bcDenom, sdk.NewInt(9_000000)),
+		FuryBurned:  sdk.NewCoin(blackfury.AttoFuryDenom, sdk.ZeroInt()),
 	})
 	suite.app.BankKeeper.MintCoins(suite.ctx, types.ModuleName, sdk.NewCoins(sdk.NewCoin(suite.bcDenom, sdk.NewInt(1000_000000))))
 	suite.app.MakerKeeper.SetTotalBacking(suite.ctx, types.TotalBacking{
-		BlackMinted:  sdk.NewCoin(blackfury.MicroUSMDenom, sdk.NewInt(8_500000)),
-		FuryBurned: sdk.NewCoin(blackfury.AttoFuryDenom, sdk.ZeroInt()),
+		BlackMinted: sdk.NewCoin(blackfury.MicroUSMDenom, sdk.NewInt(8_500000)),
+		FuryBurned:  sdk.NewCoin(blackfury.AttoFuryDenom, sdk.ZeroInt()),
 	})
 
 	// set account, pool and total collateral
 	suite.app.MakerKeeper.SetAccountCollateral(suite.ctx, suite.accAddress, types.AccountCollateral{
 		Account:             suite.accAddress.String(),
 		Collateral:          sdk.NewCoin(suite.bcDenom, sdk.NewInt(10_000000)),
-		BlackDebt:             sdk.NewCoin(blackfury.MicroUSMDenom, sdk.NewInt(6_000000)),
+		BlackDebt:           sdk.NewCoin(blackfury.MicroUSMDenom, sdk.NewInt(6_000000)),
 		FuryCollateralized:  sdk.NewCoin(blackfury.AttoFuryDenom, sdk.NewInt(3e15)),
 		LastInterest:        sdk.NewCoin(blackfury.MicroUSMDenom, sdk.ZeroInt()),
 		LastSettlementBlock: 0,
 	})
 	suite.app.MakerKeeper.SetPoolCollateral(suite.ctx, types.PoolCollateral{
 		Collateral:         sdk.NewCoin(suite.bcDenom, sdk.NewInt(15_000000)),
-		BlackDebt:            sdk.NewCoin(blackfury.MicroUSMDenom, sdk.NewInt(8_000000)),
+		BlackDebt:          sdk.NewCoin(blackfury.MicroUSMDenom, sdk.NewInt(8_000000)),
 		FuryCollateralized: sdk.NewCoin(blackfury.AttoFuryDenom, sdk.ZeroInt()),
 	})
 	suite.app.MakerKeeper.SetTotalCollateral(suite.ctx, types.TotalCollateral{
-		BlackDebt:            sdk.NewCoin(blackfury.MicroUSMDenom, sdk.NewInt(10_000000)),
+		BlackDebt:          sdk.NewCoin(blackfury.MicroUSMDenom, sdk.NewInt(10_000000)),
 		FuryCollateralized: sdk.NewCoin(blackfury.AttoFuryDenom, sdk.ZeroInt()),
 	})
 }
